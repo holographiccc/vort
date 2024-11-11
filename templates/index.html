@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>リアルタイム投票</title>
-	
+    <!-- 正しい形式でスタイルシートをリンク -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>リアルタイム投票</h1>
     <p>投票数: <span id="vote_count">{{ vote_count }}</span></p>
     <button onclick="incrementVote()">投票</button>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
     <!-- Socket.IOクライアントライブラリを読み込み -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
     
     <!-- クライアントサイドのJavaScriptファイルを読み込み -->
-    <script src="{{ url_for('static', filename='static/js/vote.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vote.js') }}"></script>
 </body>
 </html>
